@@ -1,0 +1,2 @@
+#!/data/data/com.termux/files/usr/bin/bash
+am start -a android.intent.action.VIEW -p is.xyz.mpv -t 'audio/*' -d 'file:///storage/emulated/0/Audiobooks/current.m4b'
