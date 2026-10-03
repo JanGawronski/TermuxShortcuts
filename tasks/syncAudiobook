@@ -1,0 +1,13 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+git -C /data/data/com.termux/files/home/.local/state/mpv fetch origin 
+
+if git -C /data/data/com.termux/files/home/.local/state/mpv diff --quiet HEAD@{upstream} HEAD; then
+	cp /data/data/com.termux/files/home/storage/shared/Android/media/is.xyz.mpv/watch_later/25A1226C34D95B81856D6E31421CEE2C /data/data/com.termux/files/home/.local/state/mpv/watch_later/616C49357235C475A586182534E42D5E
+	git -C /data/data/com.termux/files/home/.local/state/mpv add .                   
+	git -C /data/data/com.termux/files/home/.local/state/mpv commit -m "Sync"        
+	git -C /data/data/com.termux/files/home/.local/state/mpv push
+else
+	git -C /data/data/com.termux/files/home/.local/state/mpv pull
+	cp /data/data/com.termux/files/home/.local/state/mpv/watch_later/616C49357235C475A586182534E42D5E /data/data/com.termux/files/home/storage/shared/Android/media/is.xyz.mpv/watch_later/25A1226C34D95B81856D6E31421CEE2C
+fi
